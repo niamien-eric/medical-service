@@ -1,0 +1,65 @@
+﻿@page
+@model Medical_Manager.Pages.Admin.Consults.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gestion des consultations</h1>
+
+<p>
+    <a asp-page="Create">Ajouter un consultation</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Consult[0].date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Consult[0].emploi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Consult[0].entreprise)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Consult[0].sexe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Consult[0].dignostique)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Consult[0].commentaire)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Consult) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emploi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.entreprise)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sexe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dignostique)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.commentaire)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Modifier</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

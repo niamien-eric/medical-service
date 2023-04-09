@@ -1,0 +1,51 @@
+﻿@page
+@model Medical_Manager.Pages.Admin.Products.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Modifier un produit</h1>
+
+<h4>Produit pharmaceutique</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Product.Id" />
+
+            <div class="form-group">
+                <label asp-for="Product.date" class="control-label"></label>
+                <input asp-for="Product.date" class="form-control" />
+                <span asp-validation-for="Product.date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.designation" class="control-label"></label>
+                <input asp-for="Product.designation" class="form-control" />
+                <span asp-validation-for="Product.designation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.stockUtilise" class="control-label"></label>
+                <input asp-for="Product.stockUtilise" class="form-control" />
+                <span asp-validation-for="Product.stockUtilise" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.forme" class="control-label"></label>
+                <input asp-for="Product.forme" class="form-control" />
+                <span asp-validation-for="Product.forme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sauvegarder" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Retour à la liste</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,55 @@
+﻿@page
+@model Medical_Manager.Pages.Admin.Products.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Liste des médicaments</h1>
+
+<p>
+    <a asp-page="Create">Ajouter un produit</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].designation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].stockUtilise)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].forme)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Product) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.designation)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stockUtilise)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.forme)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Modifier</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

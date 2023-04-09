@@ -1,0 +1,60 @@
+﻿@page
+@model Medical_Manager.Pages.Admin.Consults.EditModel
+
+@{
+    ViewData["Title"] = "Modification";
+}
+
+<h1>Modifier</h1>
+
+<h4>Consultation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Consult.id" />
+            <div class="form-group">
+                <label asp-for="Consult.date" class="control-label"></label>
+                <input asp-for="Consult.date" class="form-control" />
+                <span asp-validation-for="Consult.date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consult.emploi" class="control-label"></label>
+                <input asp-for="Consult.emploi" class="form-control" />
+                <span asp-validation-for="Consult.emploi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consult.entreprise" class="control-label"></label>
+                <input asp-for="Consult.entreprise" class="form-control" />
+                <span asp-validation-for="Consult.entreprise" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consult.sexe" class="control-label"></label>
+                <input asp-for="Consult.sexe" class="form-control" />
+                <span asp-validation-for="Consult.sexe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consult.dignostique" class="control-label"></label>
+                <input asp-for="Consult.dignostique" class="form-control" />
+                <span asp-validation-for="Consult.dignostique" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consult.commentaire" class="control-label"></label>
+                <input asp-for="Consult.commentaire" class="form-control" />
+                <span asp-validation-for="Consult.commentaire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Retour à la liste des consultations</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

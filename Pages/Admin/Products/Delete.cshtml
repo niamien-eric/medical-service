@@ -1,0 +1,48 @@
+﻿@page
+@model Medical_Manager.Pages.Admin.Products.DeleteModel
+
+@{
+    ViewData["Title"] = "Suppression";
+}
+
+<h1>Supprimer un produit</h1>
+
+<h3>êtes-vous sûre de vouloir supprimer?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Product.date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Product.date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Product.designation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Product.designation)
+        </dd>
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Product.stockUtilise)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Product.stockUtilise)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Product.forme)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Product.forme)
+        </dd>
+     
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Product.Id" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-page="./Index">Retour à la liste</a>
+    </form>
+</div>

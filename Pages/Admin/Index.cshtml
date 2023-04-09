@@ -1,0 +1,53 @@
+﻿@page
+@model Medical_Manager.Pages.Admin.IndexModel
+@{
+}
+
+<html>
+    <head>
+        <title>Se connecter</title>
+        <link rel="stylesheet" href="~/css/w3.css">
+    <style>
+        .formulaire{
+            margin-top:50px;
+            display:flex;
+            align-items:center;
+            height: 70vh;
+            flex-direction:column;
+        }
+        input{
+            padding:8px;
+            border-radius:5px;
+            border: 1px solid gray ;
+            width:350px;
+        }
+        .admin{
+            margin:5px;
+            font-weight:600;
+            text-align:center;
+        }
+
+        .error{
+            margin:20px;
+            color:white;
+            background-color:orangered;
+            width:300px;
+            text-align:center;
+        }
+    </style>
+    </head>
+    <body>
+        <h2 class="admin">Vous allez être authentifier</h2>
+        <form method="post" class="w3-container formulaire">
+            @if (Model.error)
+            {
+                <div class="error">
+                    <p>Incorrect: Vérifier le Nom utilisation et/ou le mot de passe.</p>
+                </div>
+            }
+            <input type="text" name="username" placeholder="Login"><br />
+            <input type="password" name="password" placeholder="Mot de passe"><br />
+            <button class="w3-border-0 w3-blue w3-padding w3-round-medium" >Connectez-vous!</button>
+        </form>
+    </body>
+</html>
